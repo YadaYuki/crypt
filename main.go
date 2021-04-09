@@ -19,7 +19,7 @@ func main() {
 		log.Fatal("Error: NewCipher(%d bytes) = %s", len(keyText), err)
 	}
 
-	cfb := cipher.NewCFBEncrypter(c,commonIV)
+	cfb := cipher.NewCFBEncrypter(c,commonIV) 
 	cipherText := make([]byte,len(plainText))
 	cfb.XORKeyStream(cipherText,plainText)
 	fmt.Printf("%s => %x \n",plainText,cipherText)
